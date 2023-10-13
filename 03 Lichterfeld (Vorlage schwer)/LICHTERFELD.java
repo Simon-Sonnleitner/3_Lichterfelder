@@ -2,7 +2,8 @@
 public class LICHTERFELD extends SPIEL
 {
     //TODO: Deklariere ein zweidimensionales Array zur Verwaltung von Objekten der Klasse KREIS. Nenne das Array 'feld'.
-    private KREIS[][]feld;
+    private final KREIS[][]feld;
+
 
     public LICHTERFELD()
     {
@@ -28,7 +29,7 @@ public class LICHTERFELD extends SPIEL
         }
 
         
-        this.zeigeKoordinatensystem(true);
+        LICHTERFELD.zeigeKoordinatensystem(true);
     }
 
     //TODO Methode LampeEinschalten(int x, int y).
@@ -48,11 +49,9 @@ public class LICHTERFELD extends SPIEL
 
     public void AlleLampenAusschalten()
     {
-        for (int i = 0; i < feld.length; i++)
-        {
-            for (int j = 0; j < feld.length; j++)
-            {
-                feld[i][j].setzeFarbe("schwarz");
+        for (KREIS[] kreis : feld) {
+            for (int j = 0; j < feld.length; j++) {
+                kreis[j].setzeFarbe("schwarz");
             }
         }
     }
@@ -61,16 +60,47 @@ public class LICHTERFELD extends SPIEL
 
     public void AlleLampenEinschalten()
     {
-        for (int i = 0; i < feld.length; i++)
-        {
-            for (int j = 0; j < feld.length; j++)
-            {
-                feld[i][j].setzeFarbe("gelb");
+        for (KREIS[] kreis : feld) {
+            for (int j = 0; j < feld.length; j++) {
+                kreis[j].setzeFarbe("gelb");
             }
         }
     }
 
     //TODO Methode AbwechselndEinschalten().
+
+    public void AbwechselndEinschalten()
+    {
+        for (int i = 0; i < feld.length; i++)
+        {
+            if ((i % 2) == 0)
+            {
+                for (int j = 1; j < feld.length; j += 2)
+                {
+                    feld[i][j].setzeFarbe("gelb");
+                }
+
+            } else
+            {
+                for (int j = 0; j < feld.length; j += 2)
+                {
+                    feld[i][j].setzeFarbe("gelb");
+                }
+            }
+        }
+
+    }
+
+    public void burgiCode()
+    {
+        for (int i = 0; i < feld.length; i++)
+        {
+            for (int j = ( i % 2 ) > 0 ? 1 : 0; j < feld.length; j+=2)
+            {
+                this.feld[i][j].setzeFarbe("weiß");
+            }
+        }
+    }
 
 
 }
