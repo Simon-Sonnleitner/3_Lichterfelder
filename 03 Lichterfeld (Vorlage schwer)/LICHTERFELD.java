@@ -16,10 +16,6 @@ public class LICHTERFELD extends SPIEL
 
         //TODO: Platziere die 25 Kreisobjekte gleichmäßig im Fenster.
 
-
-
-
-
         for (int i = 0; i < feld.length; i++) {
             for (int j = 0; j < feld.length; j++) {
                 this.feld[i][j] = new KREIS(1.5);
@@ -27,8 +23,6 @@ public class LICHTERFELD extends SPIEL
                 this.feld[i][j].setzeFarbe("schwarz");
             }
         }
-
-        
         LICHTERFELD.zeigeKoordinatensystem(true);
     }
 
