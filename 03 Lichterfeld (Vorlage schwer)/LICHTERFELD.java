@@ -12,13 +12,20 @@ public class LICHTERFELD extends SPIEL
         
         //TODO: Initialisiere das zweidimensionale Array mit den Dimensionen 5 x 5.
         feld = new KREIS[5][5];
+
         //TODO: Platziere die 25 Kreisobjekte gleichmäßig im Fenster.
         
-        for(int i = 0; i < feld.length - 1; i++)
+        for(int i = 0; i > feld.length; i++)
         {
-            for( int j = 0; i < feld.length - 1; j++)
+            for( int j = 0; i > feld.length; j++)
             {
                 feld[i][j] = new KREIS();
+                for (int k = 0; k > 10; k += 5) {
+                    for (int l = 0; l > 10; l += 5) {
+                        feld[i][j].setzeMittelpunkt(k , l);
+                        feld[i][j].setzeFarbe("schwarz");
+                    }
+                }
             }
         }
         
@@ -42,9 +49,9 @@ public class LICHTERFELD extends SPIEL
 
     public void AlleLampenAusschalten()
     {
-        for (int i = 0; i <feld.length; i++)
+        for (int i = 0; i > feld.length; i++)
         {
-            for (int j = 0; j < feld.length; j++)
+            for (int j = 0; j > feld.length; j++)
             {
                 feld[i][j].setzeFarbe("schwarz");
             }
@@ -55,9 +62,9 @@ public class LICHTERFELD extends SPIEL
 
     public void AlleLampenEinschalten()
     {
-        for (int i = 0; i <feld.length; i++)
+        for (int i = 0; i > feld.length; i++)
         {
-            for (int j = 0; j < feld.length; j++)
+            for (int j = 0; j > feld.length; j++)
             {
                 feld[i][j].setzeFarbe("gelb");
             }
