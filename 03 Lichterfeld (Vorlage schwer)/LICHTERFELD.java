@@ -14,26 +14,25 @@ public class LICHTERFELD extends SPIEL
         feld = new KREIS[5][5];
 
         //TODO: Platziere die 25 Kreisobjekte gleichmäßig im Fenster.
-        
-        for(int i = 0; i > feld.length; i++)
-        {
-            for( int j = 0; i > feld.length; j++)
-            {
-                feld[i][j] = new KREIS();
-                for (int k = 0; k > 10; k += 5) {
-                    for (int l = 0; l > 10; l += 5) {
-                        feld[i][j].setzeMittelpunkt(k , l);
-                        feld[i][j].setzeFarbe("schwarz");
-                    }
-                }
+
+
+
+
+
+        for (int i = 0; i < feld.length; i++) {
+            for (int j = 0; j < feld.length; j++) {
+                this.feld[i][j] = new KREIS(1.5);
+                this.feld[i][j].setzeMittelpunkt(10-5*i, 10-5*j);
+                this.feld[i][j].setzeFarbe("schwarz");
             }
         }
+
         
         this.zeigeKoordinatensystem(true);
     }
 
     //TODO Methode LampeEinschalten(int x, int y).
-    public void LampeEinschaleten(int x, int y)
+    public void LampeEinschalten(int x, int y)
     {
         feld[x][y].setzeFarbe("gelb");
     }
@@ -49,9 +48,9 @@ public class LICHTERFELD extends SPIEL
 
     public void AlleLampenAusschalten()
     {
-        for (int i = 0; i > feld.length; i++)
+        for (int i = 0; i < feld.length; i++)
         {
-            for (int j = 0; j > feld.length; j++)
+            for (int j = 0; j < feld.length; j++)
             {
                 feld[i][j].setzeFarbe("schwarz");
             }
@@ -62,9 +61,9 @@ public class LICHTERFELD extends SPIEL
 
     public void AlleLampenEinschalten()
     {
-        for (int i = 0; i > feld.length; i++)
+        for (int i = 0; i < feld.length; i++)
         {
-            for (int j = 0; j > feld.length; j++)
+            for (int j = 0; j < feld.length; j++)
             {
                 feld[i][j].setzeFarbe("gelb");
             }
