@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=LICHTERFELD
+comment1.params=
+comment1.target=LICHTERFELD()
+comment2.params=x\ y
+comment2.target=void\ LampeEinschaleten(int,\ int)
+numComments=3
