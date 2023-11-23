@@ -448,7 +448,7 @@ implements TastenReagierbar, Ticker, MausKlickReagierbar, MausRadReagierbar, Bil
      */
     public void setzeKamerarotation( double winkelInGrad )
     {
-        super.setzeKamerarotation( (double)(Math.toRadians( winkelInGrad )) );
+        super.setzeKamerarotation(Math.toRadians( winkelInGrad ));
     }
     
     

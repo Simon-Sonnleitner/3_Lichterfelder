@@ -38,7 +38,7 @@ extends Kreis
     /**
      * Radius dieses Kreises
      */
-    private double radius;
+    private final double radius;
     
     /**
      * x-Koordinate des Mittelpunkts
@@ -137,7 +137,7 @@ extends Kreis
         //this.kreis = new Kreis( radius );
         //super.setzeMittelpunkt( x , y );
         //super.setzeFarbe( this.farbe )*/
-        ((ea.actor.Circle)getActor()).resetRadius((float)radius);
+        getActor().resetRadius((float)radius);
         super.setzeMittelpunkt( x , y );
     }
     

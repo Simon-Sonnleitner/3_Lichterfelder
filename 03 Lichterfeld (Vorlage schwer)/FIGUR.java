@@ -337,7 +337,7 @@ extends Figur
      * @param   gespiegelt  'true' spiegeln, 'false' nicht spiegeln
      */
     public void spiegelnHorizontal( boolean gespiegelt ) {
-        ((StatefulAnimation)this.getActor()).setFlipHorizontal( gespiegelt );
+        this.getActor().setFlipHorizontal( gespiegelt );
     }
     
     
@@ -347,7 +347,7 @@ extends Figur
      * @param   gespiegelt  'true' spiegeln, 'false' nicht spiegeln
      */
     public void spiegelnVertikal( boolean gespiegelt ) {
-        ((StatefulAnimation)super.getActor()).setFlipVertical( gespiegelt );
+        super.getActor().setFlipVertical( gespiegelt );
     }
     
     

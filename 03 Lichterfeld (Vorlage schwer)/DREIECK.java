@@ -155,7 +155,7 @@ extends Dreieck
         //dreieck.setzeFarbe( this.farbe );
         
         ea.Vector[] points = {new ea.Vector(Ax, Ay), new ea.Vector(Bx, By), new ea.Vector(Cx, Cy)};
-        ((ea.actor.Polygon)getActor()).resetPoints(points);
+        getActor().resetPoints(points);
         
         super.setzeMittelpunkt( this.M_x , this.M_y );
     }

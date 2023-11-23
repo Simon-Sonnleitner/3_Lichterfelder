@@ -38,12 +38,12 @@ extends Rechteck
     /**
      * Breite des Rechtecks
      */
-    private double breite;
+    private final double breite;
     
     /**
      * Hoehe des Rechtecks
      */
-    private double hoehe;
+    private final double hoehe;
     
     /**
      * x-Koordinate ds Mittelpunkts

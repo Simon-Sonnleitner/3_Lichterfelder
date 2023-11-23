@@ -13,10 +13,12 @@ public class GRAPH_MATRIX
     private int anzahlKnoten;
 
     // Feld der Knoten des Graphen
-    private KNOTEN[] knoten;
+    private final KNOTEN[] knoten;
 
     // 2-dim Feld der Adjazenzmatrix
-    private int[][] matrix;
+    private final int[][] matrix;
+
+    DARSTELLUNG darstellung;
 
     /**
      * Konstruktor für Objekte der Klasse GRAPH_MATRIX
@@ -27,6 +29,8 @@ public class GRAPH_MATRIX
      */
     public GRAPH_MATRIX(int maximaleKnoten)
     {
+        darstellung = new DARSTELLUNG();
+        darstellung.eigentlichKnoten = new KREIS[maximaleKnoten];
         anzahlKnoten = 0;
         knoten = new KNOTEN[maximaleKnoten];
         matrix = new int[maximaleKnoten][maximaleKnoten];
@@ -73,13 +77,13 @@ public class GRAPH_MATRIX
         return ergeb;
     }
 
-    public void KnotenEinfuegen(String bezeichner)
+    public void KnotenEinfuegen(String bezeichner, double x, double y)
     {
         if(anzahlKnoten < knoten.length && KnotenNummer(bezeichner) == -1)
         {
             knoten[anzahlKnoten] = new KNOTEN(bezeichner);
             matrix[anzahlKnoten][anzahlKnoten] = 0;
-
+            darstellung.KnotenEinfuegen(x,y, bezeichner);
             for (int i = 0; i < anzahlKnoten; i++)
             {
                 matrix[anzahlKnoten][i] = -1;
