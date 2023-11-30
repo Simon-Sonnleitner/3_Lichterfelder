@@ -1,8 +1,10 @@
 import java.util.Objects;
 
+@SuppressWarnings("GrazieInspection")
+
 /**
  * Klasse GRAPH_MATRIX
- * Klasse für einen ungerichteten, gewichteten Graphen
+ * Klasse für einen ungerichteten, gewichteten Graphen.
  * Als Datenstruktur wird eine Adjazenzmatrix verwendet
  *
  */
@@ -21,7 +23,7 @@ public class GRAPH_MATRIX
     DARSTELLUNG darstellung;
 
     /**
-     * Konstruktor für Objekte der Klasse GRAPH_MATRIX
+     * Konstruktor für Objekte der Klasse GRAPH_MATRIX.
      * Die maximale Anzahl der Knoten wird dabei festgelegt
      *
      * @param   maximaleKnoten   Anzahl der maximal möglichen Knoten
