@@ -21,8 +21,9 @@ public class DARSTELLUNG extends SPIEL
         {
             double KreisX= super.zufallsKommazahlVonBis(-10,10);
             double KreisY = super.zufallsKommazahlVonBis(-10,10);
+            System.out.println(KreisX + " " + KreisY);
             neuerKnoten.setzeMittelpunkt(KreisX, KreisY);
-            TEXT neuerBezeichner = new TEXT(KreisX,KreisY,2,bezeichner);
+            TEXT neuerBezeichner = new TEXT(KreisX,KreisY,10,bezeichner);
         }
         anzahlKnoten++;
     }
@@ -36,5 +37,4 @@ public class DARSTELLUNG extends SPIEL
         }
         return false;
     }
-
 }
