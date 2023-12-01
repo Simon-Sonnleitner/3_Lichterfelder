@@ -1,3 +1,5 @@
+import ea.edu.Kreis;
+
 public class DARSTELLUNG extends SPIEL
 {
     public KREIS[] eigentlichKnoten;
@@ -8,24 +10,25 @@ public class DARSTELLUNG extends SPIEL
         super ( 750 , 750);
         this.setzeHintergrundgrafik("hintergrund.jpg");
         DARSTELLUNG.zeigeKoordinatensystem(true);
+        eigentlichKnoten  = new KREIS[10];
     }
 
-    public void KnotenEinfuegen(double x, double y, String bezeichner)
+    public void KnotenEinfuegen(String bezeichner)
     {
         KREIS neuerKnoten = new KREIS();
         eigentlichKnoten[anzahlKnoten] = neuerKnoten;
         while (textBeruehrung(eigentlichKnoten[anzahlKnoten]))
         {
-            super.zufallsKommazahlVonBis(0,10);
+            double KreisX= super.zufallsKommazahlVonBis(-10,10);
+            double KreisY = super.zufallsKommazahlVonBis(-10,10);
+            neuerKnoten.setzeMittelpunkt(KreisX, KreisY);
+            TEXT neuerBezeichner = new TEXT(KreisX,KreisY,2,bezeichner);
         }
-        neuerKnoten.setzeMittelpunkt(x,y);
         anzahlKnoten++;
-        TEXT neuerBezeichner = new TEXT(x,y,2,bezeichner);
-
     }
     public boolean textBeruehrung(KREIS k)
     {
-        for (int i = 0; i < anzahlKnoten; i++) {
+        for (int i = 0; i < eigentlichKnoten.length; i++) {
             if (k.beruehrt(eigentlichKnoten[i]))
             {
                 return true;

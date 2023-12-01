@@ -79,13 +79,13 @@ public class GRAPH_MATRIX
         return ergeb;
     }
 
-    public void KnotenEinfuegen(String bezeichner, double x, double y)
+    public void KnotenEinfuegen(String bezeichner)
     {
         if(anzahlKnoten < knoten.length && KnotenNummer(bezeichner) == -1)
         {
             knoten[anzahlKnoten] = new KNOTEN(bezeichner);
             matrix[anzahlKnoten][anzahlKnoten] = 0;
-            darstellung.KnotenEinfuegen(x,y, bezeichner);
+            darstellung.KnotenEinfuegen(bezeichner);
             for (int i = 0; i < anzahlKnoten; i++)
             {
                 matrix[anzahlKnoten][i] = -1;

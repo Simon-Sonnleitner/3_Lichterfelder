@@ -4,8 +4,9 @@ public class MAIN
 //        LICHTERFELD lichterfeld = new LICHTERFELD();
 //        lichterfeld.AlleLampenAusschalten();
 //        lichterfeld.AbwechselndEinschalten();
-                GRAPH_MATRIX graph_matrix = new GRAPH_MATRIX(10);
-                graph_matrix.KnotenEinfuegen("A", 5,5);
+        GRAPH_MATRIX graph_matrix = new GRAPH_MATRIX(10);
+        graph_matrix.KnotenEinfuegen("A");
+        graph_matrix.KnotenEinfuegen("B");
 //                graph_matrix.KnotenEinfuegen("B");
 //                graph_matrix.Ausgeben();
 //                graph_matrix.KanteEinfuegen("A","B",50);
