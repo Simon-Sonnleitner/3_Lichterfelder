@@ -110,6 +110,7 @@ public class GRAPH_MATRIX
         {
             matrix[vonNummer][nachNummer] = gewichtung;
             matrix[nachNummer][vonNummer] = gewichtung;
+            darstellung.KanteEinfuegen(vonNummer, nachNummer);
         }
     }
 
