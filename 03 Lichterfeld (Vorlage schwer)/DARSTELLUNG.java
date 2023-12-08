@@ -39,7 +39,7 @@ public class DARSTELLUNG extends SPIEL {
     public void KanteEinfuegen(int von, int nach)
     {
         /**
-         * Rechteck verwenden
+         * TODO Rechteck verwenden
          */
     }
 }

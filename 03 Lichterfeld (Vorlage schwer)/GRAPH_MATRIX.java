@@ -129,10 +129,10 @@ public class GRAPH_MATRIX
     {
         if(knotennummer > anzahlKnoten)
         {
-            System.out.println("Unter dieser Knotennummer ist kein Knoten vorhanden");
+//            System.out.println("Unter dieser Knotennummer ist kein Knoten vorhanden");
             return null;
         }
-        System.out.println("Der Knoten hat den Bezeichner " + knoten[knotennummer].BezeichnungGeben());
+//        System.out.println("Der Knoten hat den Bezeichner " + knoten[knotennummer].BezeichnungGeben());
         System.out.println();
         return knoten[knotennummer].BezeichnungGeben();
     }
@@ -158,5 +158,35 @@ public class GRAPH_MATRIX
     {
         System.out.println("Es gibt "+ this.anzahlKnoten + " Knoten");
         return this.anzahlKnoten;
+    }
+
+    public void BreitendurchlaufAusfuehren(String startknoten)
+    {
+        int[] warteschlange = new int[anzahlKnoten];
+        boolean[] besucht = new boolean[anzahlKnoten];
+        warteschlange[0] = KnotenNummer(startknoten);
+        int temp = 0;
+        for (int i = 0; i < anzahlKnoten; i++)
+        {
+            for (int j = 0; j < anzahlKnoten; j++)
+            {
+                if(matrix[i][warteschlange[j]] != -1 && !besucht[i])
+                {
+                   warteschlange[temp] = i;
+                   temp++;
+                   besucht[i] = true;
+                }
+            }
+        }
+
+
+        System.out.printf("%-15s" , "Warteschlange");
+        System.out.println("besucht");
+        for (int i = 0; i < anzahlKnoten; i++)
+        {
+
+            System.out.printf("0%-15s" , KnotenBezeichnerGeben(warteschlange[i]));
+            System.out.println(besucht[i]);
+        }
     }
 }
